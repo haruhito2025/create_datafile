@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notion統合検索</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Notion統合検索</h1>
+        <div class="search-box">
+            <input type="text" id="search-input" placeholder="検索キーワードを入力...">
+            <div class="engine-selector">
+                <button class="engine-btn active" data-engine="google">Google</button>
+                <button class="engine-btn" data-engine="chatgpt">ChatGPT</button>
+            </div>
+            <button id="search-btn">検索</button>
+        </div>
+
+        <div id="loading" class="hidden">検索中...</div>
+
+        <div id="results-area" class="hidden">
+            <h2>検索結果</h2>
+            <div id="result-content"></div>
+            <p><strong>ソース:</strong> <a id="result-source" href="#" target="_blank"></a></p>
+
+            <div id="category-selector">
+                <h3>カテゴリを選択して保存</h3>
+                <div id="category-buttons"></div>
+            </div>
+
+            <div id="save-confirmation" class="hidden"></div>
+        </div>
+    </div>
+    <script src="/static/script.js"></script>
+</body>
+</html>
