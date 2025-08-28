@@ -154,3 +154,90 @@ h1 {
 .hidden {
     display: none;
 }
+
+/* === モバイル対応 === */
+@media screen and (max-width: 768px) {
+    body {
+        padding: 10px;
+        font-size: 14px;
+    }
+    
+    .container {
+        padding: 20px 15px;
+        border-radius: 0;
+        box-shadow: none;
+        min-height: calc(100vh - 20px);
+    }
+    
+    h1 {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+    
+    .search-box {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    #search-input {
+        min-width: unset;
+        width: 100%;
+        font-size: 16px; /* iOS Safari ズーム防止 */
+        box-sizing: border-box;
+    }
+    
+    .engine-selector {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .engine-btn {
+        flex: 1;
+        text-align: center;
+        padding: 15px;
+        font-size: 16px;
+    }
+    
+    #search-btn {
+        width: 100%;
+        padding: 15px;
+        font-size: 18px;
+        border-radius: 8px;
+    }
+    
+    #result-content {
+        font-size: 14px;
+        padding: 12px;
+    }
+    
+    #category-buttons {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+    
+    #category-buttons button {
+        flex: 1;
+        min-width: calc(50% - 4px);
+        margin: 0;
+        padding: 12px 8px;
+        font-size: 14px;
+        text-align: center;
+    }
+}
+
+/* iPhone SE など小さい画面向け */
+@media screen and (max-width: 480px) {
+    h1 {
+        font-size: 20px;
+    }
+    
+    .engine-btn, #search-btn {
+        font-size: 16px;
+    }
+    
+    #category-buttons button {
+        min-width: 100%;
+        margin-bottom: 8px;
+    }
+}

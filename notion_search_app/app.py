@@ -195,4 +195,5 @@ if __name__ == '__main__':
     if not all([NOTION_API_KEY, NOTION_DATABASE_ID]):
         print("警告: NOTION_API_KEY と NOTION_DATABASE_ID の両方を.envファイルに設定してください。")
 
-    app.run(debug=True, port=5001)
+    # ローカルネットワーク内の他のデバイス（iPhone等）からもアクセス可能にする
+    app.run(debug=True, host='0.0.0.0', port=5001)
