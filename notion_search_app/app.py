@@ -111,7 +111,8 @@ def get_category_suggestions(text):
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    # This will be created in a later step
+    return "<h1>Notion Search App</h1><p>Frontend will be here.</p>"
 
 @app.route("/api/save", methods=['POST'])
 def api_save():

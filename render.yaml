@@ -1,0 +1,23 @@
+# Render Deployment Configuration
+# This file instructs the Render platform on how to build and run the application.
+
+services:
+  - type: web
+    name: notion-search-app
+    # The environment for the service (Python 3)
+    env: python
+    # The root directory of the application code
+    rootDir: notion_search_app
+    # Specify the free instance type
+    plan: free
+    # Commands to build the service
+    buildCommand: "pip install -r requirements.txt"
+    # Command to start the service using the Gunicorn production server
+    startCommand: "gunicorn app:app"
+    # Environment variables can be set here, but API keys should be set
+    # securely in the Render dashboard's "Environment" section.
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.12.11 # Using a specific Python version for consistency
+      # IMPORTANT: Set your secret keys (NOTION_API_KEY, OPENAI_API_KEY, etc.)
+      # in the Render.com dashboard, not here.

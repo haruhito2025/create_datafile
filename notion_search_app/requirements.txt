@@ -4,3 +4,4 @@ requests
 notion-client
 openai
 google-search-results
+gunicorn
